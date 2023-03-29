@@ -42,7 +42,7 @@ pipeline {
          
           stage('ZAP'){
              steps{
-             sh "docker run -v $(pwd):/zap/wrk/:rw owasp/zap2docker-stable zap-full-scan.py -t http://testphp.vulnweb.com/"
+             sh 'docker run -v $(pwd):/zap/wrk/:rw owasp/zap2docker-stable zap-full-scan.py -t http://testphp.vulnweb.com/'
              }
          }
          stage('Trivy'){
